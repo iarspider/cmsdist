@@ -3,8 +3,8 @@
 ## INITENV SET ROOTSYS %{i}
 ## INCLUDE compilation_flags
 ## INCLUDE cpp-standard
-%define tag 91312900f2881cd4437c695791886674266c801f
-%define branch cms/v6-34-00-patches/aeb6485
+%define tag b9106fc72e5d4b9cd2fc38c4744dbe1a7ac7cd1c
+%define branch cms/v6-34-00-patches/a53dc49f44
 
 %define github_user cms-sw
 Source: git+https://github.com/%{github_user}/root.git?obj=%{branch}/%{tag}&export=%{n}-%{realversion}&output=/%{n}-%{realversion}-%{tag}.tgz
@@ -89,7 +89,6 @@ cmake ../%{n}-%{realversion} \
   -Dbuiltin_glew=ON \
   -Dbuiltin_ftgl=ON \
   -Dbuiltin_gl2ps=ON \
-  -Dbuiltin_afterimage=ON \
   -Dbuiltin_xxhash=ON \
   -Dbuiltin_nlohmannjson=ON \
   -Darrow=OFF \
@@ -127,7 +126,6 @@ cmake ../%{n}-%{realversion} \
   -Dalien=OFF \
   -Dmonalisa=OFF \
 %ifarch darwin
-  -Dbuiltin_afterimage=OFF \
   -Dcocoa=OFF \
   -Dx11=ON \
   -Dcastor=OFF \
